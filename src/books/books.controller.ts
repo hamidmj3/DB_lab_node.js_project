@@ -1,16 +1,26 @@
-import { Body, Controller, Get, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, Controller, Get, ParseIntPipe, Post, Put,Delete,Query } from '@nestjs/common';
 import { BooksService } from './books.service';
-import CreateBookDto from '../user/dto/create-book.dto';
+import {CreateBookDto,updateBookDto} from '../user/dto/create-book.dto';
 
 @Controller('book')
 export default class GenreController {
-  constructor(private readonly genreServices: BooksService) {}
+  constructor(private readonly bookServices: BooksService) {}
   @Post('post')
-  postGenre( @Body() genre: CreateBookDto) {
-    return this.genreServices.insert(genre);
+  postBook( @Body() book: CreateBookDto) {
+    return this.bookServices.insert(book);
   }
   @Get()
   getAll() {
-    return this.genreServices.getAllBooks();
+    return this.bookServices.getAllBooks();
   }
+  @Put()
+  updateBook(@Body() book: updateBookDto){
+      return this.bookServices.update(book)
+
+  }
+  @Delete()
+  deleteBook(@Query('id') id){
+    return this.bookServices.delete(id)
+  }
+
 }
