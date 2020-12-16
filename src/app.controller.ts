@@ -36,7 +36,7 @@ export class AppController {
     userEntity.name = name;
     UserEntity.save(userEntity);
     
-    //return this.authService.login(userEntity);
+    return this.authService.login(userEntity);
   }
 }
 

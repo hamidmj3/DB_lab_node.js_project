@@ -25,6 +25,6 @@ export class UserServices {
     return user.books;
   }
   async findOne(username: string): Promise<UserEntity> {
-    return UserEntity.findOne(username);
+    return UserEntity.findOne({username:username});
   }
 }
