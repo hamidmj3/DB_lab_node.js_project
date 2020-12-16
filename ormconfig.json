@@ -5,7 +5,7 @@
     "username": "postgres",
     "synchronize": "true",
     "password": "h123456",
-    "database": "todolist",
+    "database": "Todolist",
     "entities": [
       "dist/db/*.js"
     ],
