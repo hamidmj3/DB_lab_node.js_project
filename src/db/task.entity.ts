@@ -21,7 +21,8 @@ export default class TaskEntity extends BaseEntity
   @OneToMany( type => ItemEntity , item => item.task)
   items: ItemEntity[];
 
-  @OneToMany( type => TagEntity , item => item.task)
+  @ManyToMany( type => TagEntity , item => item.task)
+  @JoinTable()
   tags: TagEntity[];
 
   @ManyToOne(type => UserEntity, user => user.items)

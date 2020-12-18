@@ -27,7 +27,7 @@ export class TaskService {
                  const item = new ItemEntity();
                  item.name = items[i];
                  item.save();
-                 task.tags.push(item);
+                 task.items.push(item);
         }
         await task.save();
         return task;

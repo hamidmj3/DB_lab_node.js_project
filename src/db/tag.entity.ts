@@ -12,8 +12,8 @@ export default class TagEntity extends BaseEntity
   @Column()
     name: string;
 
-  @ManyToOne(type => TaskEntity, task => task.tags)
-  task: TaskEntity;
+  @ManyToMany(type => TaskEntity, task => task.tags)
+  task: TaskEntity[];
 
 
 }

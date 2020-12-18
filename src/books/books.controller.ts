@@ -3,7 +3,7 @@ import { BooksService } from './books.service';
 import {CreateBookDto,updateBookDto} from '../user/dto/create-book.dto';
 
 @Controller('book')
-export default class GenreController {
+export default class BooksController {
   constructor(private readonly bookServices: BooksService) {}
   @Post('post')
   postBook( @Body() book: CreateBookDto) {
